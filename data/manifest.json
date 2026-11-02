@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_utc": "2026-11-02 17:14 UTC",
+  "generated_utc": "2026-11-02 17:48 UTC",
   "source": ".\\SQLEXPRESS / EnvDataQC",
-  "pipeline_commit": "f98357e",
+  "pipeline_commit": "11d81b7",
   "max_held_fraction": 0.1,
   "tables": {
     "batch_summary": 6,
