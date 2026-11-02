@@ -15,6 +15,7 @@ import datetime as dt
 import decimal
 import json
 import os
+import shutil
 import subprocess
 import tomllib
 import urllib.parse
@@ -29,6 +30,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 DB_FILE = DATA / "envdataqc.duckdb"
 MANIFEST = DATA / "manifest.json"
+EXAMPLE_AGS = DATA / "example_RIE01.ags"   # sample file for the AGS viewer page
 PIPELINE_REPO = Path(os.environ.get("EDDQC_PIPELINE_REPO", ROOT.parent / "EDD-Validation-Engine-and-QA-QC"))
 SCHEMA_VERSION = 1
 
@@ -93,6 +95,15 @@ def pipeline_info() -> dict:
     return info
 
 
+def copy_example_ags(data_dir: Path) -> str | None:
+    """Copy the pipeline's latest full AGS export (not a single-batch one) as the viewer's example file."""
+    exports = sorted(p for p in (PIPELINE_REPO / "data" / "ags").glob("RIE01_*.ags") if "_batch" not in p.name)
+    if not exports:
+        return None
+    shutil.copyfile(exports[-1], data_dir / EXAMPLE_AGS.name)
+    return exports[-1].name
+
+
 def refresh(data_dir: Path = DATA) -> dict:
     engine, server, database = sql_engine()
     data_dir.mkdir(parents=True, exist_ok=True)
@@ -110,6 +121,7 @@ def refresh(data_dir: Path = DATA) -> dict:
             con.unregister("frame")
             counts[name] = len(df)
     os.replace(tmp, db_file)
+    example = copy_example_ags(data_dir)
 
     manifest = {
         "schema_version": SCHEMA_VERSION,
@@ -117,6 +129,7 @@ def refresh(data_dir: Path = DATA) -> dict:
         "source": f"{server} / {database}",
         **pipeline_info(),
         "tables": counts,
+        "example_ags": example,
         "note": "Fictional site and simulated laboratory data. Screening criteria are illustrative.",
     }
     (data_dir / MANIFEST.name).write_text(json.dumps(manifest, indent=2), encoding="utf-8")
@@ -124,7 +137,8 @@ def refresh(data_dir: Path = DATA) -> dict:
 
 
 def push() -> None:
-    subprocess.run(["git", "-C", str(ROOT), "add", "data/envdataqc.duckdb", "data/manifest.json"], check=True)
+    subprocess.run(["git", "-C", str(ROOT), "add", "data/envdataqc.duckdb", "data/manifest.json",
+                    "data/example_RIE01.ags"], check=True)
     staged = subprocess.run(["git", "-C", str(ROOT), "diff", "--cached", "--quiet"])
     if staged.returncode == 0:
         print("Data unchanged; nothing to push.")

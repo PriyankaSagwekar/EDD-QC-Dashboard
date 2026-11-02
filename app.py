@@ -10,5 +10,6 @@ pages = [
     st.Page("pages/site_map.py", title="Site map", icon=":material/map:"),
     st.Page("pages/results_explorer.py", title="Results explorer", icon=":material/show_chart:"),
     st.Page("pages/screening.py", title="Screening", icon=":material/warning:"),
+    st.Page("pages/ags_viewer.py", title="AGS viewer", icon=":material/layers:"),
 ]
 st.navigation(pages).run()

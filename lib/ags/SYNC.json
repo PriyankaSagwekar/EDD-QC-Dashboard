@@ -1,0 +1,41 @@
+{
+  "pipeline_commit": "c027c55",
+  "files": {
+    "model.py": {
+      "source": "src/eddqc/ags/model.py",
+      "sha256": "fea4d8716dfbe83f6d60cce76c8eebd2b3a7a4a696446984233b13e7355c91f2"
+    },
+    "dictionary.py": {
+      "source": "src/eddqc/ags/dictionary.py",
+      "sha256": "b5fa4962c63e4166b8b2f1854776783a0148e63fe417a8ecb25a8bc026ce1c97"
+    },
+    "checker.py": {
+      "source": "src/eddqc/ags/checker.py",
+      "sha256": "4bb73cf60d3b58fc4d4d9f493ac6f80751fd1db2098ec2d1d225e4082ec13368"
+    },
+    "reference.py": {
+      "source": "src/eddqc/ags/reference.py",
+      "sha256": "3ecf78f83adc0c3a0c535d830b9de3e778887e7fdd777b0a5d16b3326fa4e5c6"
+    },
+    "reference/ABBR.csv": {
+      "source": "docs/reference/ags/ABBR.csv",
+      "sha256": "db2122fa852f607fa57d1a573c303c6769ba55990fff23a80efeb878e7e2e310"
+    },
+    "reference/UNITS.csv": {
+      "source": "docs/reference/ags/UNITS.csv",
+      "sha256": "d7937bfd3d1b42ce716f346f848cf1074eea8201a7bea9a955bd632db9216fdc"
+    },
+    "reference/DATATYPES.csv": {
+      "source": "docs/reference/ags/DATATYPES.csv",
+      "sha256": "7147ea31d07acc88b0841739ed265e46dde9877ca5e00a7d75933e36ee13906f"
+    },
+    "reference/ELRG.csv": {
+      "source": "docs/reference/ags/ELRG.csv",
+      "sha256": "c7234a65c9fc3e4d4d1ebc0d661b84c50c464f873d4bfe48aac1a4e646a7a4f9"
+    },
+    "reference/SOURCE.md": {
+      "source": "docs/reference/ags/SOURCE.md",
+      "sha256": "34f34a5b180cf615456f71d5024e66477470a16b6b87324f6bf63d0c49601bcf"
+    }
+  }
+}

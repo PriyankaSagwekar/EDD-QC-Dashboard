@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_utc": "2026-11-02 17:48 UTC",
+  "generated_utc": "2026-11-02 23:47 UTC",
   "source": ".\\SQLEXPRESS / EnvDataQC",
-  "pipeline_commit": "11d81b7",
+  "pipeline_commit": "c027c55",
   "max_held_fraction": 0.1,
   "tables": {
     "batch_summary": 6,
@@ -17,5 +17,6 @@
     "screening_location": 15,
     "rules": 36
   },
+  "example_ags": "RIE01_20261102.ags",
   "note": "Fictional site and simulated laboratory data. Screening criteria are illustrative."
 }

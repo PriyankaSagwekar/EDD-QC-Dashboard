@@ -4,3 +4,4 @@ pandas>=2.2
 duckdb>=1.1
 plotly>=6.0
 numpy>=1.26
+pyproj>=3.6        # British National Grid -> WGS84 for the AGS viewer map
