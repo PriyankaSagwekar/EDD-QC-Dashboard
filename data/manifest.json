@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-11-02 17:14 UTC",
+  "source": ".\\SQLEXPRESS / EnvDataQC",
+  "pipeline_commit": "f98357e",
+  "max_held_fraction": 0.1,
+  "tables": {
+    "batch_summary": 6,
+    "exception_summary": 49,
+    "exception_detail": 120,
+    "qualifier_summary": 58,
+    "held_rows": 285,
+    "location_qc_status": 15,
+    "result_timeseries": 2673,
+    "screening_exceedance": 2005,
+    "screening_summary": 405,
+    "screening_location": 15,
+    "rules": 36
+  },
+  "note": "Fictional site and simulated laboratory data. Screening criteria are illustrative."
+}

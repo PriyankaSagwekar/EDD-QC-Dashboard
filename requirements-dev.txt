@@ -1,0 +1,6 @@
+# Laptop only: refresh script (reads the local SQL Server) and tests.
+-r requirements.txt
+pyodbc>=5.0
+sqlalchemy>=2.0
+pyproj>=3.6
+pytest>=8

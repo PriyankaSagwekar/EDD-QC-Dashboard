@@ -1,0 +1,6 @@
+# ArcGIS Online items embedded in the dashboard. Share each item publicly (Everyone),
+# then paste its URL here. Leave a value empty to show the built-in map instead.
+[maps]
+site_qc = ""        # web map: location_qc_status symbolised by qc_rag
+screening = ""      # web map: location_screening_summary symbolised by ratio_band
+results = ""        # ArcGIS Dashboard: results explorer
